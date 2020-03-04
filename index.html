@@ -11,28 +11,38 @@
 <body>
     <nav>
         <p>XT2-C1</p>
+        <figure>
+            <img id="logo" src="img/logodark.png">
+        </figure>
         <button onclick="colorswitch()">
-            <img id="modesSwitch" src="img/night.png"></button>
+            <img id="modesSwitch" src="img/night.png">
+        </button>
     </nav>
     <header>
     </header>
-    <section id="LuchtChartSection">
+    <section class="voertuig" id="LuchtChartSection">
         <canvas id="LuchtChart"></canvas>
+        <p>bla bla bla</p>
     </section>
-    <section id="AtmosfeerChartSection">
+    <section class="omgeving" id="AtmosfeerChartSection">
         <canvas id="AtmosfeerChart"></canvas>
     </section>
-    <section id="TankChartSection">
+    <section class="voertuig" id="TankChartSection">
         <canvas id="TankChart"></canvas>
     </section>
-    <section id="AfstandChartSection">
+    <section class="omgeving" id="AfstandChartSection">
         <canvas id="AfstandChart"></canvas>
     </section>
-    <section id="ZuurstofChartSection">
+    <section class="hulpmiddelen" id="ZuurstofChartSection">
         <canvas id="ZuurstofChart"></canvas>
     </section>
-    <section id="SnelheidChartSection">
-        <p id="Snelheid">100</p>
+    <section class="omgeving" id="SnelheidChartSection">
+        <p>Aantal dagen onderweg richting mars:</p>
+        <p id="Snelheid" class="counter">110</p>
+    </section>
+    <section class="hulpmiddelen" id="VeiligheidstouwChartSection">
+        <p>Aantal cm veiligheidstouw over:</p>
+        <p id="Veiligheidstouw" class="counter">768</p>
     </section>
     <footer>
     </footer>

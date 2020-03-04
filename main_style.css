@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli');
+@import url('https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lalezar&display=swap');
+
 nav{
     width:100vw;
     height:50px;
@@ -7,12 +11,26 @@ nav{
     z-index: 20;
     background-color:#005288;
     display:flex;
-    justify-content: center;
+    justify-content: space-evenly;
     box-shadow: 0 4px 4px rgba(1,1,1,0.3);
 }
 nav p{
     text-align:center;
-    width:33vw;
+
+}
+nav button{
+    padding:0;
+}
+nav figure{
+    margin:0;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+img#logo{
+    max-height:25px;
+    margin-bottom: 9px;
+    margin-left:10px;
 }
 
 body{
@@ -29,8 +47,10 @@ section{
     margin:5px 0;
     border-radius:10px;
     max-width: 400px;
+    min-height: 250px;
     width: 95vw;
     box-shadow: 0 2px 4px rgba(1,1,1,0.3);
+    align-content: center;
 }
 section canvas {
     /*background-image: url("https://i.redd.it/fhd06mc02q911.png");*/
@@ -45,8 +65,13 @@ button {
     cursor:pointer;
     outline:none;
 }
-p#Snelheid{
-    font-size:18px;
+p#Snelheid, p#Veiligheidstouw{
+    font-size:2em;
     font-weight: 900;
     color:#121212;/*colordark1*/
+    font-family: 'Lalezar', cursive;
+}
+p{
+    text-align:center;
+    font-family: 'Muli', sans-serif;
 }

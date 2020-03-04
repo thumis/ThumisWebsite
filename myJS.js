@@ -65,18 +65,24 @@ var colordark1 = '#121212';
 var colordark2 = '#1d1d1d';
 
 Chart.defaults.global.legend.display = true;
+//Chart.defaults.global.legend.align = 'start' ;
 Chart.defaults.global.legend.position = 'bottom';
 Chart.defaults.global.legend.labels.fontColor = colordark1;
+//Chart.defaults.global.legend.labels.boxWidth = '80';
 
 Chart.defaults.global.title.display = true;
 Chart.defaults.global.title.position = 'top';
+Chart.defaults.global.title.fontFamily = "'Lalezar', cursive";
+
+Chart.defaults.global.defaultFontFamily = "'Muli', sans-serif";
 Chart.defaults.global.title.fontColor = colordark1;
-Chart.defaults.global.title.fontStyle = 'bold';
-Chart.defaults.global.title.fontSize = '18';
+Chart.defaults.global.title.fontStyle = '500';
+Chart.defaults.global.title.fontSize = '32';
 Chart.defaults.doughnut.borderColor = '#222222';
 /*Chart.defaults.doughnut.borderWidth='0';
 Chart.defaults.doughnut.hoverBorderWidth='0';*/
 Chart.defaults.doughnut.borderAlign = 'inner';
+
 
 var ctx = document.getElementById('LuchtChart').getContext('2d');
 var luchtChart = new Chart(ctx, {
@@ -84,17 +90,19 @@ var luchtChart = new Chart(ctx, {
 
     data: {
         datasets: [{
-            data: [78, 20, 1],
+            data: [78.00, 20.00, 1.00, 0.00],
             backgroundColor:[
                 color1,
                 color2,
-                color3
+                color3,
+                color5
             ]
         }],
         labels: [
             'stikstof',
             'zuurstof',
-            'koolstofdioixde'
+            'koolstofdioixde',
+            'onbekende stof'
         ],
     },
     options:{
@@ -184,9 +192,10 @@ var TankChart = new Chart(tctx, {
         datasets: [{
             data: [7500],
             backgroundColor: color1,
+            label:'Ruimteschip',
         }],
         labels: [
-            'brandstoftank is gevuld voor',
+            'Aantal L brandstof over',
         ],
     },
     options: {
@@ -216,7 +225,7 @@ var AfstandChart = new Chart(actx, {
     type: 'horizontalBar',
     data: {
         datasets: [{
-            data: [172800],
+            data: [17280],
             backgroundColor: color2,
         }],
         labels: [
@@ -231,7 +240,7 @@ var AfstandChart = new Chart(actx, {
             xAxes: [{
                 ticks: {
                     beginAtZero: true,
-                    max:400000
+                    max:60000
                 }
             }],
             yAxes: [{
@@ -248,6 +257,13 @@ var ZuurstofChart = new Chart(zctx, {
         datasets: [{
             data: [150],
             backgroundColor: color3,
+            label:'Zuurstof tank 1'
+        },
+        {
+
+            data: [200],
+            backgroundColor: color2,
+            label:'Zuurstof tank 2'
         }],
         labels: [
             'bar zuurstof over',
@@ -255,7 +271,7 @@ var ZuurstofChart = new Chart(zctx, {
     },
     options: {
         title: {
-            text: 'Zuurstoftank',
+            text: 'Zuurstoftank'
         },
         scales: {
             xAxes: [{
@@ -265,26 +281,34 @@ var ZuurstofChart = new Chart(zctx, {
                 }
             }],
             yAxes: [{
-                stacked: true
+                stacked: false
             }]
         }
     }
 });
 
+//========= dark/light theme switch ==========
 
-//dark/light theme switch
 var modes = 0;
 function colorswitch(){
     const sections = document.getElementsByTagName('section');
+    const paragraps = document.getElementsByTagName('p');
 
     if (modes == 0) { //dark modes aan
         //er moet [0] bij omdat hij anders niet weet welke nav er gebruikt moet worden ook al is er maar eentje
         document.getElementsByTagName('nav')[0].style.backgroundColor = colordark2;
+       // document.getElementsByTagName('p')[0].style.color = colorlight1;;
+        document.getElementById('Snelheid').style.color = colorlight1;
+        document.body.style.backgroundColor = colordark1;
 
-        //console.log(sections);
+        console.log(sections);
+        console.log(paragraps);
+
         for (let i = 0; i < sections.length; i++) {
             sections[i].style.backgroundColor = colordark2;
-            document.body.style.backgroundColor = colordark1;
+        }
+        for (let i = 0; i < paragraps.length; i++) {
+            paragraps[i].style.color = colorlight1;
         }
         luchtChart.options = {
             title: {
@@ -365,7 +389,7 @@ function colorswitch(){
                 xAxes: [{
                     ticks: {
                         beginAtZero: true,
-                        max:3000
+                        max:60000
                     }
                 }],
                 yAxes: [{
@@ -375,17 +399,47 @@ function colorswitch(){
         };
         AfstandChart.update();
 
+        ZuurstofChart.options = {
+
+            title: {
+                fontColor: colorlight1,
+                text: 'Zuurstoftank'
+            },
+            legend:{
+                labels:{
+                    fontColor:colorlight1
+                }
+            },
+            scales: {
+                xAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        max:200
+                    }
+                }],
+                yAxes: [{
+                    stacked: false
+                }]
+            }
+        };
+        ZuurstofChart.update();
+
         modes = 1;
         document.getElementById("modesSwitch").src = "img/day.png";
+        document.getElementById("logo").src = "img/logo.png";
     }
     else{ //day modes aan
         //er moet [0] bij omdat hij anders niet weet welke nav er gebruikt moet worden ook al is er maar eentje
         document.getElementsByTagName('nav')[0].style.backgroundColor = '#005288';
+        document.getElementById('Snelheid').style.color = colordark1;
+        document.body.style.backgroundColor = colorlight1;
 
         //console.log(sections);
         for (let i = 0; i < sections.length; i++) {
             sections[i].style.backgroundColor = colorlight2;
-            document.body.style.backgroundColor = colorlight1;
+        }
+        for (let i = 0; i < paragraps.length; i++) {
+            paragraps[i].style.color = colordark1;
         }
 
         luchtChart.options = {
@@ -405,7 +459,7 @@ function colorswitch(){
                 xAxes: [{
                     ticks: {
                         beginAtZero: true,
-                        max:3000
+                        max:60000
                     }
                 }],
                 yAxes: [{
@@ -443,6 +497,26 @@ function colorswitch(){
         };
         atmosfeerChart.update();
 
+        ZuurstofChart.options = {
+
+            title: {
+                fontColor: colordark1,
+                text: 'Zuurstoftank'
+            },
+            scales: {
+                xAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        max:200
+                    }
+                }],
+                yAxes: [{
+                    stacked: false
+                }]
+            }
+        };
+        ZuurstofChart.update();
+
 
         /*
         snelheidChart.options = {
@@ -456,31 +530,56 @@ function colorswitch(){
         snelheidChart.update();*/
         modes = 0;
         document.getElementById("modesSwitch").src = "img/night.png";
+        document.getElementById("logo").src = "img/logodark.png";
     }
 }
 
 window.onload = counter();
-function counter(){
-    i=0;
-    var x=0;
+function counter() {
+    i = 0;
+    var x = 0;
     var number = document.getElementById('Snelheid').innerHTML;
 
     while (i < number) {
-        x+= 1;
+        x += 1;
         i++;
         //zodat er bij 1 wordt begonnen en eindigt bij het getal wat in number staat
-        task(i,x);
+        task(i, x);
     }
-    function task(i,x) {
+
+    function task(i, x) {
+        setTimeout(function () {
+            /*console.log(
+                'i:'+i+'\n'+
+                'x:'+x+'\n'+
+                'number:'+number+'\n'+
+                'timeout:'+ 1 * i * x);*/
+            document.getElementById('Snelheid').innerHTML = i;
+
+        }, 0.058 * i * x);
+    }
+}
+window.onload = counter2();
+function counter2() {
+    i = 0;
+    var x = 0;
+    var number2 = document.getElementById('Veiligheidstouw').innerHTML;
+    while (i < number2) {
+        x+= 0.014;//start speed
+        i++;
+        //zodat er bij 1 wordt begonnen en eindigt bij het getal wat in number staat
+        task2(i,x);
+    }
+    function task2(i,x) {
         setTimeout(function() {
             console.log(
                 'i:'+i+'\n'+
                 'x:'+x+'\n'+
-                'number:'+number+'\n'+
+                'number:'+number2+'\n'+
                 'timeout:'+ 1 * i * x);
-            document.getElementById('Snelheid').innerHTML = i;
+            document.getElementById('Veiligheidstouw').innerHTML = i;
 
-        },0.058* i * x);
+        },0.08* i * x);//curve speed
     }
 }
 
