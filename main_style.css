@@ -1,0 +1,52 @@
+nav{
+    width:100vw;
+    height:50px;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index: 20;
+    background-color:#005288;
+    display:flex;
+    justify-content: center;
+    box-shadow: 0 4px 4px rgba(1,1,1,0.3);
+}
+nav p{
+    text-align:center;
+    width:33vw;
+}
+
+body{
+    padding-top:54px;
+    background-color:#F5F5F6;
+    margin:0;
+    display: flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+section{
+    background-color: #E1E2E1;
+    margin:5px 0;
+    border-radius:10px;
+    max-width: 400px;
+    width: 95vw;
+    box-shadow: 0 2px 4px rgba(1,1,1,0.3);
+}
+section canvas {
+    /*background-image: url("https://i.redd.it/fhd06mc02q911.png");*/
+    position: relative;
+}
+#modesSwitch{
+    width:36px;
+}
+button {
+    background-color: Transparent;
+    border: none;
+    cursor:pointer;
+    outline:none;
+}
+p#Snelheid{
+    font-size:18px;
+    font-weight: 900;
+    color:#121212;/*colordark1*/
+}
