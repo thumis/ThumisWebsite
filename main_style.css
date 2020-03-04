@@ -65,7 +65,11 @@ button {
     cursor:pointer;
     outline:none;
 }
+<<<<<<< HEAD
 p#Snelheid, p#Veiligheidstouw{
+=======
+p#Snelheid{
+>>>>>>> c55be4f53e7ff89dc0847ba425c635df9a415efa
     font-size:2em;
     font-weight: 900;
     color:#121212;/*colordark1*/
