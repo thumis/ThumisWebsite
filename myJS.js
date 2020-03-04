@@ -68,11 +68,7 @@ Chart.defaults.global.legend.display = true;
 //Chart.defaults.global.legend.align = 'start' ;
 Chart.defaults.global.legend.position = 'bottom';
 Chart.defaults.global.legend.labels.fontColor = colordark1;
-<<<<<<< HEAD
 //Chart.defaults.global.legend.labels.boxWidth = '80';
-=======
-Chart.defaults.global.legend.labels.boxWidth = '80';
->>>>>>> c55be4f53e7ff89dc0847ba425c635df9a415efa
 
 Chart.defaults.global.title.display = true;
 Chart.defaults.global.title.position = 'top';
@@ -576,18 +572,12 @@ function counter2() {
     }
     function task2(i,x) {
         setTimeout(function() {
-            /*console.log(
+            console.log(
                 'i:'+i+'\n'+
                 'x:'+x+'\n'+
-<<<<<<< HEAD
                 'number:'+number2+'\n'+
                 'timeout:'+ 1 * i * x);
             document.getElementById('Veiligheidstouw').innerHTML = i;
-=======
-                'number:'+number+'\n'+
-                'timeout:'+ 1 * i * x);*/
-            document.getElementById('Snelheid').innerHTML = i;
->>>>>>> c55be4f53e7ff89dc0847ba425c635df9a415efa
 
         },0.08* i * x);//curve speed
     }
