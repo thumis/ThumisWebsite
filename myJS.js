@@ -65,8 +65,10 @@ var colordark1 = '#121212';
 var colordark2 = '#1d1d1d';
 
 Chart.defaults.global.legend.display = true;
+//Chart.defaults.global.legend.align = 'start' ;
 Chart.defaults.global.legend.position = 'bottom';
 Chart.defaults.global.legend.labels.fontColor = colordark1;
+Chart.defaults.global.legend.labels.boxWidth = '80';
 
 Chart.defaults.global.title.display = true;
 Chart.defaults.global.title.position = 'top';
@@ -80,6 +82,7 @@ Chart.defaults.doughnut.borderColor = '#222222';
 /*Chart.defaults.doughnut.borderWidth='0';
 Chart.defaults.doughnut.hoverBorderWidth='0';*/
 Chart.defaults.doughnut.borderAlign = 'inner';
+
 
 var ctx = document.getElementById('LuchtChart').getContext('2d');
 var luchtChart = new Chart(ctx, {
@@ -192,7 +195,7 @@ var TankChart = new Chart(tctx, {
             label:'Ruimteschip',
         }],
         labels: [
-            'brandstoftank is gevuld voor',
+            'Aantal L brandstof over',
         ],
     },
     options: {
@@ -222,7 +225,7 @@ var AfstandChart = new Chart(actx, {
     type: 'horizontalBar',
     data: {
         datasets: [{
-            data: [172800],
+            data: [17280],
             backgroundColor: color2,
         }],
         labels: [
@@ -237,7 +240,7 @@ var AfstandChart = new Chart(actx, {
             xAxes: [{
                 ticks: {
                     beginAtZero: true,
-                    max:400000
+                    max:60000
                 }
             }],
             yAxes: [{
@@ -415,7 +418,7 @@ function colorswitch(){
                     }
                 }],
                 yAxes: [{
-                    stacked: true
+                    stacked: false
                 }]
             }
         };
@@ -508,7 +511,7 @@ function colorswitch(){
                     }
                 }],
                 yAxes: [{
-                    stacked: true
+                    stacked: false
                 }]
             }
         };
