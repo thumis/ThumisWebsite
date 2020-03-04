@@ -257,6 +257,7 @@ var ZuurstofChart = new Chart(zctx, {
             label:'Zuurstof tank 1'
         },
         {
+
             data: [200],
             backgroundColor: color2,
             label:'Zuurstof tank 2'
