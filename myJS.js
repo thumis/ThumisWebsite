@@ -602,14 +602,115 @@ function counter2() {
     }
     function task2(i,x) {
         setTimeout(function() {
-            console.log(
+            /*console.log(
                 'i:'+i+'\n'+
                 'x:'+x+'\n'+
                 'number:'+number2+'\n'+
-                'timeout:'+ 1 * i * x);
+                'timeout:'+ 1 * i * x);*/
             document.getElementById('Veiligheidstouw').innerHTML = i;
 
         },0.08* i * x);//curve speed
     }
 }
 
+window.onload = counter3();
+function counter3() {
+    i = 0;
+    var x = 0;
+    var number2 = document.getElementById('Versnelling').innerHTML;
+    while (i < number2) {
+        x+= 14;//start speed
+        i++;
+        //zodat er bij 1 wordt begonnen en eindigt bij het getal wat in number staat
+        task3(i,x);
+    }
+    function task3(i,x) {
+        setTimeout(function() {
+            /*console.log(
+                'i:'+i+'\n'+
+                'x:'+x+'\n'+
+                'number:'+number2+'\n'+
+                'timeout:'+ 1 * i * x);*/
+            document.getElementById('Versnelling').innerHTML = i + " m/s<sup>2</sup>";
+
+        },0.08* i * x);//curve speed
+    }
+}
+
+var voertuigcheck = 0;
+function voertuig() {
+    const voertuig = document.getElementsByClassName('voertuig');
+    if (voertuigcheck == 0) { //dark modes aan
+        //console.log(voertuig);
+        for (let i = 0; i < voertuig.length; i++) {
+            voertuig[i].style.display = 'none';
+        }
+        voertuigcheck = 1;
+        document.getElementById("VoertuigButton").style.backgroundColor = color1;
+    }
+    else{
+        //console.log(voertuig);
+        for (let i = 0; i < voertuig.length; i++) {
+            voertuig[i].style.display = 'unset';
+        }
+        voertuigcheck = 0;
+        if (modes == 0){
+            document.getElementById("VoertuigButton").style.backgroundColor = colorlight1;
+        }
+        else {
+            document.getElementById("VoertuigButton").style.backgroundColor = colordark1;
+        }
+    }
+}
+
+var omgevingcheck = 0;
+function omgeving() {
+    const omgeving = document.getElementsByClassName('omgeving');
+    if (omgevingcheck == 0) { //dark modes aan
+        //console.log(voertuig);
+        for (let i = 0; i < omgeving.length; i++) {
+            omgeving[i].style.display = 'none';
+        }
+        omgevingcheck = 1;
+        document.getElementById("OmgevingButton").style.backgroundColor = color1;
+    }
+    else{
+        //console.log(voertuig);
+        for (let i = 0; i < omgeving.length; i++) {
+            omgeving[i].style.display = 'unset';
+        }
+        omgevingcheck = 0;
+        if (modes == 0){
+            document.getElementById("OmgevingButton").style.backgroundColor = colorlight1;
+        }
+        else {
+            document.getElementById("OmgevingButton").style.backgroundColor = colordark1;
+        }
+    }
+}
+
+var hulpmiddelencheck = 0;
+function hulpmiddelen() {
+    const hulpmiddelen = document.getElementsByClassName('hulpmiddelen');
+    if (hulpmiddelencheck == 0) { //dark modes aan
+        //console.log(voertuig);
+        for (let i = 0; i < hulpmiddelen.length; i++) {
+            hulpmiddelen[i].style.display = 'none';
+        }
+        hulpmiddelencheck = 1;
+        document.getElementById("HulpmiddelenButton").style.backgroundColor = color1;
+    }
+    else{
+        //console.log(voertuig);
+        for (let i = 0; i < hulpmiddelen.length; i++) {
+            hulpmiddelen[i].style.display = 'unset';
+        }
+        hulpmiddelencheck = 0;
+        if (modes == 0){
+            document.getElementById("hulpmiddelenButton").style.backgroundColor = colorlight1;
+        }
+        else {
+            document.getElementById("hulpmiddelenButton").style.backgroundColor = colordark1;
+        }
+    }
+}

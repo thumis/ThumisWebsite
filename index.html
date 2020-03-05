@@ -19,12 +19,25 @@
         </button>
     </nav>
     <header>
+        <button class="keuzes" id="VoertuigButton" onclick="voertuig()">
+            voertuig informatie
+        </button>
+        <button class="keuzes" id="OmgevingButton" onclick="omgeving()">
+            omgeving
+        </button>
+        <button class="keuzes" id="HulpmiddelenButton" onclick="hulpmiddelen()">
+            hulpmiddelen
+        </button>
     </header>
     <main id="dashboard">
         <section class="voertuig" id="LuchtChartSection">
             <h2>Luchtverhouding</h2>
             <canvas id="LuchtChart"></canvas>
-            <p>bla bla bla</p>
+        </section>
+        <section class="voertuig" id="VersnellingChartSection">
+            <h2></h2>
+            <p>Versnelling:</p>
+            <p id="Versnelling" class="counter">10</p>
         </section>
         <section class="omgeving" id="AtmosfeerChartSection">
             <h2>Omgeving</h2>

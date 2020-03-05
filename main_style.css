@@ -92,8 +92,8 @@ button {
     cursor:pointer;
     outline:none;
 }
-p#Snelheid, p#Veiligheidstouw{
-    font-size:2em;
+.counter{
+    font-size:1.5em;
     font-weight: 900;
     color:#121212;/*colordark1*/
     font-family: 'Lalezar', cursive;
