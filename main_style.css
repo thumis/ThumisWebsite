@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Muli');
 @import url('https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lalezar&display=swap');
-
+*{
+    color:#121212;/*colordark1*/
+}
 html{
     width: 100vw;
     display: flex;
@@ -92,10 +94,23 @@ button {
     cursor:pointer;
     outline:none;
 }
+header{
+    display: flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    max-width:400px;
+    width:95vw;
+}
+button.keuzes{
+    padding:10px;
+    background-color: #E1E2E1;
+    box-shadow: 0 4px 4px rgba(1,1,1,0.3);
+    border-radius:10px;
+}
 .counter{
     font-size:1.5em;
     font-weight: 900;
-    color:#121212;/*colordark1*/
     font-family: 'Lalezar', cursive;
 }
 p{

@@ -312,8 +312,7 @@ function colorswitch(){
     const sections = document.getElementsByTagName('section');
     const paragraps = document.getElementsByTagName('p');
     const headlines = document.getElementsByTagName('h2');
-
-
+    const keuzeButtons = document.getElementsByClassName('keuzes');
 
     if (modes == 0) { //dark modes aan
         //er moet [0] bij omdat hij anders niet weet welke nav er gebruikt moet worden ook al is er maar eentje
@@ -336,6 +335,19 @@ function colorswitch(){
         for (let i = 0; i < headlines.length; i++) {
             headlines[i].style.color = colorlight1;
         }
+        for (let i = 0; i < keuzeButtons.length; i++) {
+            keuzeButtons[i].style.color = colorlight1;
+        }
+        if(hulpmiddelencheck == 0){
+            document.getElementById("HulpmiddelenButton").style.backgroundColor = colordark2;
+        }
+        if(omgevingcheck == 0){
+            document.getElementById("OmgevingButton").style.backgroundColor = colordark2;
+        }
+        if(voertuigcheck == 0){
+            document.getElementById("VoertuigButton").style.backgroundColor = colordark2;
+        }
+
         luchtChart.options = {
             title: {
                 fontColor: colorlight1,
@@ -471,6 +483,18 @@ function colorswitch(){
         }
         for (let i = 0; i < headlines.length; i++) {
             headlines[i].style.color = colordark1;
+        }
+        for (let i = 0; i < keuzeButtons.length; i++) {
+            keuzeButtons[i].style.color = colordark1;
+        }
+        if(hulpmiddelencheck == 0){
+            document.getElementById("HulpmiddelenButton").style.backgroundColor = colorlight2;
+        }
+        if(omgevingcheck == 0){
+            document.getElementById("OmgevingButton").style.backgroundColor = colorlight2;
+        }
+        if(voertuigcheck == 0){
+            document.getElementById("VoertuigButton").style.backgroundColor = colorlight2;
         }
         luchtChart.options = {
             title: {
@@ -655,10 +679,10 @@ function voertuig() {
         }
         voertuigcheck = 0;
         if (modes == 0){
-            document.getElementById("VoertuigButton").style.backgroundColor = colorlight1;
+            document.getElementById("VoertuigButton").style.backgroundColor = colorlight2;
         }
         else {
-            document.getElementById("VoertuigButton").style.backgroundColor = colordark1;
+            document.getElementById("VoertuigButton").style.backgroundColor = colordark2;
         }
     }
 }
@@ -681,10 +705,10 @@ function omgeving() {
         }
         omgevingcheck = 0;
         if (modes == 0){
-            document.getElementById("OmgevingButton").style.backgroundColor = colorlight1;
+            document.getElementById("OmgevingButton").style.backgroundColor = colorlight2;
         }
         else {
-            document.getElementById("OmgevingButton").style.backgroundColor = colordark1;
+            document.getElementById("OmgevingButton").style.backgroundColor = colordark2;
         }
     }
 }
@@ -699,6 +723,7 @@ function hulpmiddelen() {
         }
         hulpmiddelencheck = 1;
         document.getElementById("HulpmiddelenButton").style.backgroundColor = color1;
+
     }
     else{
         //console.log(voertuig);
@@ -707,10 +732,11 @@ function hulpmiddelen() {
         }
         hulpmiddelencheck = 0;
         if (modes == 0){
-            document.getElementById("hulpmiddelenButton").style.backgroundColor = colorlight1;
+            document.getElementById("HulpmiddelenButton").style.backgroundColor = colorlight2;
         }
         else {
-            document.getElementById("hulpmiddelenButton").style.backgroundColor = colordark1;
+            document.getElementById("HulpmiddelenButton").style.backgroundColor = colordark2;
+
         }
     }
 }
