@@ -95,6 +95,7 @@ button {
     outline:none;
 }
 header{
+    padding: 10px 0;
     display: flex;
     flex-direction:row;
     flex-wrap:wrap;
@@ -131,7 +132,14 @@ footer{
     box-shadow: 0 2px 4px rgba(1,1,1,0.3);
     /*align-self:flex-end; werkt niet*/
 }
-@media screen and (min-width: 600px)  and (max-width: 1023px){ /*charts schalen niet goed daarvor*/
+@media screen and (max-width: 320px){
+    /*charts schalen niet goed daarvor*/
+    nav p{
+       display: none;
+    }
+}
+@media screen and (min-width: 600px)  and (max-width: 1023px){
+    /*charts schalen niet goed daarvor*/
     /*body {
         background-color: hotpink;
     }*/
@@ -140,7 +148,8 @@ footer{
         margin:5px;
     }
 }
-@media screen and (min-width: 1024px)  { /*charts schalen niet goed daarvoor heb hier ook geen max waarde nodig omdat er geen overeenkomende conflicten zijn*/
+@media screen and (min-width: 1024px)  {
+    /*charts schalen niet goed daarvoor heb hier ook geen max waarde nodig omdat er geen overeenkomende conflicten zijn*/
     /*body {
         background-color: limegreen;
     }*/
