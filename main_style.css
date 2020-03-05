@@ -75,3 +75,18 @@ p{
     text-align:center;
     font-family: 'Muli', sans-serif;
 }
+h2{
+    text-align:center;
+    font-family: 'Lalezar', cursive;
+    font-size:2em;
+    margin:10px 0 0 0;
+}
+@media screen and (min-width: 600px)  and (max-width: 1023px){ /*charts schalen niet goed daarvor*/
+    body {
+        background-color: hotpink;
+    }
+    section{
+        max-width: 48%;
+        margin:5px;
+    }
+}

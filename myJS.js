@@ -201,7 +201,7 @@ var TankChart = new Chart(tctx, {
             label:'Ruimteschip',
         }],
         labels: [
-            'Aantal L brandstof over',
+            '',
         ],
     },
     options: {
@@ -216,12 +216,23 @@ var TankChart = new Chart(tctx, {
                 }
             }],
             yAxes: [{
-                stacked: true
+                stacked: true,
+                ticks: {
+                    // Include a dollar sign in the ticks
+                    callback: function(value, index, values) {
+                        return 'L' + value;
+                    }
+                }
             }],
             gridLines:{
                 zeroLineColor:'#00f010',
                 color:'#ff00ff'
+            },
+            scaleLabel:{
+                display:false,
+                labelString:'Aantal L brandstof over'
             }
+
         }
     }
 });
@@ -300,6 +311,8 @@ var modes = 0;
 function colorswitch(){
     const sections = document.getElementsByTagName('section');
     const paragraps = document.getElementsByTagName('p');
+    const headlines = document.getElementsByTagName('h2');
+
 
     if (modes == 0) { //dark modes aan
         //er moet [0] bij omdat hij anders niet weet welke nav er gebruikt moet worden ook al is er maar eentje
@@ -316,6 +329,9 @@ function colorswitch(){
         }
         for (let i = 0; i < paragraps.length; i++) {
             paragraps[i].style.color = colorlight1;
+        }
+        for (let i = 0; i < headlines.length; i++) {
+            headlines[i].style.color = colorlight1;
         }
         luchtChart.options = {
             title: {
@@ -448,7 +464,9 @@ function colorswitch(){
         for (let i = 0; i < paragraps.length; i++) {
             paragraps[i].style.color = colordark1;
         }
-
+        for (let i = 0; i < headlines.length; i++) {
+            headlines[i].style.color = colordark1;
+        }
         luchtChart.options = {
             title: {
                 fontColor: colordark1,
