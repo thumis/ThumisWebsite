@@ -70,7 +70,9 @@ Chart.defaults.global.legend.position = 'bottom';
 Chart.defaults.global.legend.labels.fontColor = colordark1;
 //Chart.defaults.global.legend.labels.boxWidth = '80';
 
-Chart.defaults.global.title.display = true;
+
+//Alle titles moeten eruit omdat onder 350 width de charts te klein worden
+Chart.defaults.global.title.display = false;
 Chart.defaults.global.title.position = 'top';
 Chart.defaults.global.title.fontFamily = "'Lalezar', cursive";
 
@@ -108,6 +110,10 @@ var luchtChart = new Chart(ctx, {
     options:{
         title: {
             text: 'Luchtverhouding',
+        },
+        scales:{
+            width: 200,
+            height: 200,
         }
     }
 });
@@ -227,9 +233,10 @@ var AfstandChart = new Chart(actx, {
         datasets: [{
             data: [17280],
             backgroundColor: color2,
+            label:'ruimteschip'
         }],
         labels: [
-            'x1000km gereisd vanaf aarde',
+            'gereisd vanaf aarde x1000km',
         ],
     },
     options: {
@@ -271,7 +278,7 @@ var ZuurstofChart = new Chart(zctx, {
     },
     options: {
         title: {
-            text: 'Zuurstoftank'
+            text: 'Zuurstoftanks'
         },
         scales: {
             xAxes: [{
@@ -354,7 +361,7 @@ function colorswitch(){
             responsive: true,
             title: {
                 fontColor: colorlight1,
-                text: 'tank'
+                text: 'Brandstoftank'
             },
             legend:{
                 labels:{
@@ -472,7 +479,7 @@ function colorswitch(){
         TankChart.options = {
             title: {
                 fontColor: colordark1,
-                text: 'tank'
+                text: 'Brandstoftank'
             },
             scales: {
                 xAxes: [{
