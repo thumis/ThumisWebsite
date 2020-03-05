@@ -2,37 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lalezar&display=swap');
 
-nav{
-    width:100vw;
-    height:50px;
-    position:fixed;
-    top:0;
-    left:0;
-    z-index: 20;
-    background-color:#005288;
-    display:flex;
-    justify-content: space-evenly;
-    box-shadow: 0 4px 4px rgba(1,1,1,0.3);
-}
-nav p{
-    text-align:center;
-
-}
-nav button{
-    padding:0;
-}
-nav figure{
-    margin:0;
+html{
+    width: 100vw;
     display: flex;
-    align-items: center;
     justify-content:center;
 }
-img#logo{
-    max-height:25px;
-    margin-bottom: 9px;
-    margin-left:10px;
-}
-
 body{
     padding-top:54px;
     background-color:#F5F5F6;
@@ -41,7 +15,46 @@ body{
     flex-direction:row;
     flex-wrap:wrap;
     justify-content:center;
+    max-width:1200px;
+    text-align: center;
 }
+nav{
+    width:100vw;
+    height:50px;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index: 20;
+    background-color:#005288;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "XT2 logo switch";
+    grid-template-rows: 50px ;
+    /*justify-content: space-evenly;*/
+    box-shadow: 0 4px 4px rgba(1,1,1,0.3);
+}
+nav p{
+    text-align:center;
+    grid-area:XT2;
+}
+nav button{
+    padding:0;
+    grid-area:switch;
+}
+nav figure{
+    margin:0;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    grid-area:logo;
+}
+img#logo{
+    max-height:25px;
+    margin-bottom: 9px;
+    margin-left:10px;
+}
+
+
 section{
     background-color: #E1E2E1;
     margin:5px 0;
@@ -90,12 +103,19 @@ h2{
         margin:5px;
     }
 }
-@media screen and (min-width: 1024px){ /*charts schalen niet goed daarvor*/
+@media screen and (min-width: 1024px)  { /*charts schalen niet goed daarvoor heb hier ook geen max waarde nodig omdat er geen overeenkomende conflicten zijn*/
     /*body {
         background-color: limegreen;
     }*/
     section{
         max-width: 32%;
         margin:5px;
+    }
+}
+@media screen and (min-width: 1200px) {
+    /*navigatiebalk fix*/
+    nav {
+        grid-template-columns: auto 400px 400px 400px auto;
+        grid-template-areas: ". XT2 logo switch .";
     }
 }
