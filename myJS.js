@@ -314,10 +314,13 @@ function colorswitch(){
     const headlines = document.getElementsByTagName('h2');
 
 
+
     if (modes == 0) { //dark modes aan
         //er moet [0] bij omdat hij anders niet weet welke nav er gebruikt moet worden ook al is er maar eentje
         document.getElementsByTagName('nav')[0].style.backgroundColor = colordark2;
-       // document.getElementsByTagName('p')[0].style.color = colorlight1;;
+        document.getElementsByTagName('footer')[0].style.backgroundColor = colordark2;
+
+        // document.getElementsByTagName('p')[0].style.color = colorlight1;;
         document.getElementById('Snelheid').style.color = colorlight1;
         document.body.style.backgroundColor = colordark1;
 
@@ -454,6 +457,8 @@ function colorswitch(){
     else{ //day modes aan
         //er moet [0] bij omdat hij anders niet weet welke nav er gebruikt moet worden ook al is er maar eentje
         document.getElementsByTagName('nav')[0].style.backgroundColor = '#005288';
+        document.getElementsByTagName('footer')[0].style.backgroundColor = color1;
+
         document.getElementById('Snelheid').style.color = colordark1;
         document.body.style.backgroundColor = colorlight1;
 
