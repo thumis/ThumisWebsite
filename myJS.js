@@ -93,7 +93,7 @@ var luchtChart = new Chart(ctx, {
     data: {
         datasets: [{
             data: [78.00, 20.00, 1.00, 0.00],
-            backgroundColor:[
+            backgroundColor: [
                 color1,
                 color2,
                 color3,
@@ -104,15 +104,15 @@ var luchtChart = new Chart(ctx, {
             'stikstof',
             'zuurstof',
             'koolstofdioixde'
-        ],
+        ]
     },
-    options:{
+    options: {
         title: {
-            text: 'Luchtverhouding',
+            text: 'Luchtverhouding'
         },
-        scales:{
+        scales: {
             width: 200,
-            height: 200,
+            height: 200
         }
     }
 });
@@ -122,73 +122,48 @@ var atmosfeerChart = new Chart(attx, {
     type: 'bubble',
     data: {
         datasets: [{
-            label:'Ruimteschip',
-            data:[{
+            label: 'Ruimteschip',
+            data: [{
                 x: 0,
                 y: 0,
-                r:5}],
-            backgroundColor:color5
+                r: 5
+            }],
+            backgroundColor: color5
         }, {
-            label:'Meteoriet x1023',
-            data:[{
+            label: 'Meteoriet x1023',
+            data: [{
                 x: -100,
                 y: 20,
-                r:5}],
-            backgroundColor:color1
+                r: 5
+            }],
+            backgroundColor: color1
         }, {
-            label:'Meteoriet 343o',
-            data:[{
+            label: 'Meteoriet 343o',
+            data: [{
                 x: -55,
                 y: -67,
-                r:8}],
-            backgroundColor:color2
+                r: 8
+            }],
+            backgroundColor: color2
         }, {
-            label:'Meteoriet 681g',
-            data:[{
+            label: 'Meteoriet 681g',
+            data: [{
                 x: 34,
                 y: 93,
-                r:7}],
-            backgroundColor:color3
-        }],
-
+                r: 7
+            }],
+            backgroundColor: color3
+        }]
     },
-    options:{
+    options: {
         legend: {
-            display: true,
+            display: true
         },
         title: {
-            text: 'Omgeving',
+            text: 'Omgeving'
         }
     }
 });
-/*
-var sctx = document.getElementById('SnelheidChart').getContext('2d');
-var snelheidChart = new Chart(sctx, {
-    type: 'doughnut',
-
-    data: {
-        datasets: [{
-            labels: 'topspeed',
-            data: [50],
-            backgroundColor: color3,
-        }, {
-            labels: 'speed',
-            data: [5],
-            backgroundColor: color1,
-        }],
-        labels: [
-            'Red',
-        ],
-    },
-    options: {
-        rotation: 1 * Math.PI,
-        circumference: 1 * Math.PI,
-
-        title: {
-            text: 'Snelheid',
-        }
-    }
-});*/
 
 var tctx = document.getElementById('TankChart').getContext('2d');
 var TankChart = new Chart(tctx, {
@@ -197,39 +172,39 @@ var TankChart = new Chart(tctx, {
         datasets: [{
             data: [7500],
             backgroundColor: color1,
-            label:'Ruimteschip',
+            label: 'Ruimteschip'
         }],
         labels: [
-            '', //lege label zodat er alleen een getal staat en niet undefined
+            '' //lege label zodat er alleen een getal staat en niet undefined
         ],
     },
     options: {
         title: {
-            text: 'Brandstoftank',
+            text: 'Brandstoftank'
         },
         scales: {
             xAxes: [{
                 ticks: {
                     beginAtZero: true,
-                    max:10000
+                    max: 10000
                 }
             }],
             yAxes: [{
                 stacked: true,
                 ticks: {
                     // Include a dollar sign in the ticks
-                    callback: function(value, index, values) {
+                    callback: function(value) {
                         return 'L' + value;
                     }
                 }
             }],
-            gridLines:{
-                zeroLineColor:'#00f010',
-                color:'#ff00ff'
+            gridLines: {
+                zeroLineColor: '#00f010',
+                color: '#ff00ff'
             },
-            scaleLabel:{
-                display:false,
-                labelString:'Aantal L brandstof over'
+            scaleLabel: {
+                display: false,
+                labelString: 'Aantal L brandstof over'
             }
 
         }
@@ -243,21 +218,21 @@ var AfstandChart = new Chart(actx, {
         datasets: [{
             data: [17280],
             backgroundColor: color1,
-            label:'ruimteschip'
+            label: 'ruimteschip'
         }],
         labels: [
-            '', //lege label zodat er alleen een getal staat en niet undefined
-        ],
+            '' //lege label zodat er alleen een getal staat en niet undefined
+        ]
     },
     options: {
         title: {
-            text: 'Afstand gereisd',
+            text: 'Afstand gereisd'
         },
         scales: {
             xAxes: [{
                 ticks: {
                     beginAtZero: true,
-                    max:60000
+                    max: 60000
                 }
             }],
             yAxes: [{
@@ -274,17 +249,15 @@ var ZuurstofChart = new Chart(zctx, {
         datasets: [{
             data: [150],
             backgroundColor: color1,
-            label:'Zuurstof tank 1'
-        },
-        {
-
+            label: 'Zuurstof tank 1'
+        }, {
             data: [200],
             backgroundColor: color2,
-            label:'Zuurstof tank 2'
+            label: 'Zuurstof tank 2'
         }],
         labels: [
-            '', //lege label zodat er alleen een getal staat en niet undefined
-        ],
+            '' //lege label zodat er alleen een getal staat en niet undefined
+        ]
     },
     options: {
         title: {
@@ -294,7 +267,7 @@ var ZuurstofChart = new Chart(zctx, {
             xAxes: [{
                 ticks: {
                     beginAtZero: true,
-                    max:200
+                    max: 200
                 }
             }],
             yAxes: [{
@@ -307,7 +280,7 @@ var ZuurstofChart = new Chart(zctx, {
 //========= dark/light theme switch ==========
 
 var modes = 0;
-function colorswitch(){
+function colorswitch() {
     const sections = document.getElementsByTagName('section');
     const paragraps = document.getElementsByTagName('p');
     const headlines = document.getElementsByTagName('h2');
@@ -322,8 +295,8 @@ function colorswitch(){
         document.getElementById('Snelheid').style.color = colorlight1;
         document.body.style.backgroundColor = colordark1;
 
-        console.log(sections);
-        console.log(paragraps);
+        /*console.log(sections);
+        console.log(paragraps);*/
 
         for (let i = 0; i < sections.length; i++) {
             sections[i].style.backgroundColor = colordark2;
@@ -354,7 +327,7 @@ function colorswitch(){
             },
             legend:{
                 labels:{
-                    fontColor:colorlight1
+                    fontColor: colorlight1
                 }
             }
         };
@@ -369,7 +342,7 @@ function colorswitch(){
             },
             legend:{
                 labels:{
-                    fontColor:colorlight1
+                    fontColor: colorlight1
                 }
             }
         };
@@ -395,14 +368,14 @@ function colorswitch(){
             },
             legend:{
                 labels:{
-                    fontColor:colorlight1
+                    fontColor: colorlight1
                 }
             },
             scales: {
                 xAxes: [{
                     ticks: {
                         beginAtZero: true,
-                        max:10000
+                        max: 10000
                     }
                 }],
                 yAxes: [{
@@ -419,14 +392,14 @@ function colorswitch(){
             },
             legend:{
                 labels:{
-                    fontColor:colorlight1
+                    fontColor: colorlight1
                 }
             },
             scales: {
                 xAxes: [{
                     ticks: {
                         beginAtZero: true,
-                        max:60000
+                        max: 60000
                     }
                 }],
                 yAxes: [{
@@ -444,14 +417,14 @@ function colorswitch(){
             },
             legend:{
                 labels:{
-                    fontColor:colorlight1
+                    fontColor: colorlight1
                 }
             },
             scales: {
                 xAxes: [{
                     ticks: {
                         beginAtZero: true,
-                        max:200
+                        max: 200
                     }
                 }],
                 yAxes: [{
@@ -512,7 +485,7 @@ function colorswitch(){
                 xAxes: [{
                     ticks: {
                         beginAtZero: true,
-                        max:60000
+                        max: 60000
                     }
                 }],
                 yAxes: [{
@@ -531,7 +504,7 @@ function colorswitch(){
                 xAxes: [{
                     ticks: {
                         beginAtZero: true,
-                        max:10000
+                        max: 10000
                     }
                 }],
                 yAxes: [{
@@ -560,7 +533,7 @@ function colorswitch(){
                 xAxes: [{
                     ticks: {
                         beginAtZero: true,
-                        max:200
+                        max: 200
                     }
                 }],
                 yAxes: [{
