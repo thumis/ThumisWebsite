@@ -609,13 +609,13 @@ function counter2() {
     }
 }
 
-window.onload = counter3();
-function counter3() {
+window.onload = versnellingCounter();
+function versnellingCounter() {
     i = 0;
     var x = 0;
     var number2 = document.getElementById('Versnelling').innerHTML;
     while (i < number2) {
-        x+= 14;//start speed
+        x+= 40;//start speed
         i++;
         //zodat er bij 1 wordt begonnen en eindigt bij het getal wat in number staat
         task3(i,x);
