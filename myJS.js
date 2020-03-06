@@ -101,9 +101,9 @@ var luchtChart = new Chart(ctx, {
             ]
         }],
         labels: [
-            'stikstof',
-            'zuurstof',
-            'koolstofdioixde'
+            'Stikstof',
+            'Zuurstof',
+            'Koolstofdioixde'
         ]
     },
     options: {
@@ -218,7 +218,7 @@ var AfstandChart = new Chart(actx, {
         datasets: [{
             data: [17280],
             backgroundColor: color1,
-            label: 'ruimteschip'
+            label: 'Ruimteschip'
         }],
         labels: [
             '' //lege label zodat er alleen een getal staat en niet undefined
@@ -481,7 +481,7 @@ function colorswitch() {
         AfstandChart.options = {
             title: {
                 fontColor: colordark1,
-                text: 'afstand gereisd'
+                text: 'Afstand gereisd'
             },
             scales: {
                 xAxes: [{
