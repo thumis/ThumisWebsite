@@ -560,8 +560,8 @@ function colorswitch() {
     }
 }
 
-window.onload = counter();
-function counter() {
+window.onload = snelheidCounter();
+function snelheidCounter() {
     i = 0;
     var x = 0;
     var number = document.getElementById('Snelheid').innerHTML;
@@ -585,8 +585,8 @@ function counter() {
         }, 0.058 * i * x);
     }
 }
-window.onload = counter2();
-function counter2() {
+window.onload = veiligheidstouwCounter();
+function veiligheidstouwCounter() {
     i = 0;
     var x = 0;
     var number2 = document.getElementById('Veiligheidstouw').innerHTML;
