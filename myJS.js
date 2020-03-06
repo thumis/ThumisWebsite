@@ -290,6 +290,7 @@ function colorswitch() {
         //er moet [0] bij omdat hij anders niet weet welke nav er gebruikt moet worden ook al is er maar eentje
         document.getElementsByTagName('nav')[0].style.backgroundColor = colordark2;
         document.getElementsByTagName('footer')[0].style.backgroundColor = colordark2;
+        document.getElementsByTagName('sup')[0].style.color = colorlight1;
 
         // document.getElementsByTagName('p')[0].style.color = colorlight1;;
         document.getElementById('Snelheid').style.color = colorlight1;
@@ -442,6 +443,7 @@ function colorswitch() {
         //er moet [0] bij omdat hij anders niet weet welke nav er gebruikt moet worden ook al is er maar eentje
         document.getElementsByTagName('nav')[0].style.backgroundColor = '#005288';
         document.getElementsByTagName('footer')[0].style.backgroundColor = color1;
+        document.getElementsByTagName('sup')[0].style.color = colordark1;
 
         document.getElementById('Snelheid').style.color = colordark1;
         document.body.style.backgroundColor = colorlight1;
