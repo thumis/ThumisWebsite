@@ -103,8 +103,7 @@ var luchtChart = new Chart(ctx, {
         labels: [
             'stikstof',
             'zuurstof',
-            'koolstofdioixde',
-            'onbekende stof'
+            'koolstofdioixde'
         ],
     },
     options:{
@@ -201,7 +200,7 @@ var TankChart = new Chart(tctx, {
             label:'Ruimteschip',
         }],
         labels: [
-            '',
+            '', //lege label zodat er alleen een getal staat en niet undefined
         ],
     },
     options: {
@@ -243,11 +242,11 @@ var AfstandChart = new Chart(actx, {
     data: {
         datasets: [{
             data: [17280],
-            backgroundColor: color2,
+            backgroundColor: color1,
             label:'ruimteschip'
         }],
         labels: [
-            'gereisd vanaf aarde x1000km',
+            '', //lege label zodat er alleen een getal staat en niet undefined
         ],
     },
     options: {
@@ -274,7 +273,7 @@ var ZuurstofChart = new Chart(zctx, {
     data: {
         datasets: [{
             data: [150],
-            backgroundColor: color3,
+            backgroundColor: color1,
             label:'Zuurstof tank 1'
         },
         {
@@ -284,7 +283,7 @@ var ZuurstofChart = new Chart(zctx, {
             label:'Zuurstof tank 2'
         }],
         labels: [
-            'bar zuurstof over',
+            '', //lege label zodat er alleen een getal staat en niet undefined
         ],
     },
     options: {

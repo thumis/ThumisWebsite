@@ -124,6 +124,9 @@ h2{
     font-size:2em;
     margin:10px 0 0 0;
 }
+h2 + p{ /*p na een h2 tag*/
+    margin: 0;
+}
 footer{
     z-index: 20;
     background-color:#005288;
